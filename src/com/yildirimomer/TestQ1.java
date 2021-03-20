@@ -18,7 +18,7 @@ public class TestQ1 {
      * @param inputArray
      * @return
      */
-    public static List<String> functionQ1(List<String> inputArray){
+    public static List<String> sorterFunction(List<String> inputArray){
         List<String> retVal = new ArrayList<>();
         List<String> strWithLetter = new ArrayList<>();
         List<String> strWithoutLetter = new ArrayList<>();
@@ -73,7 +73,7 @@ public class TestQ1 {
 	// write your code here
         List<String> arrStr = Arrays.asList("aaaasd", "a", "aab", "aaabcd", "ef", "cssssssd", "fdz", "kf", "zc",
                 "lklklklklklklklkl", "l" , "asdasd" , "aasd","c");
-        List<String> strAr = functionQ1(arrStr);
+        List<String> strAr = sorterFunction(arrStr);
          strAr.forEach(a-> System.out.println(a));
          System.out.println("finished");
 
