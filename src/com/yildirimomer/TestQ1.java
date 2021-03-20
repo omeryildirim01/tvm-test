@@ -3,7 +3,9 @@ package com.yildirimomer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * Created by OMER YILDIRIM on 03.20.2021
+ */
 public class TestQ1 {
 
     /**
