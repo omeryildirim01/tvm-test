@@ -17,19 +17,25 @@ public class TestQ3 {
      * @return
      */
     public static String findMostRepeatedData(List<String> stringList){
-        if (stringList.isEmpty()) return "";
-        Map<String,Integer> stringMap = new HashMap<String, Integer>();
-        for (String str : stringList) {
-            if (stringMap.containsKey(str)){
-                stringMap.put(str, stringMap.get(str) + 1);
-            }else {
-                stringMap.put(str,1);
-            }
-        }
-        Optional<Map.Entry<String, Integer>> maxEntry = stringMap.entrySet()
-                .stream()
-                .max(Comparator.comparing(Map.Entry::getValue));
-        return maxEntry.get().getKey();
+       try {
+           if (stringList.isEmpty()) return "";
+           Map<String,Integer> stringMap = new HashMap<String, Integer>();
+           for (String str : stringList) {
+               if (stringMap.containsKey(str)){
+                   stringMap.put(str, stringMap.get(str) + 1);
+               }else {
+                   stringMap.put(str,1);
+               }
+           }
+           Optional<Map.Entry<String, Integer>> maxEntry = stringMap.entrySet()
+                   .stream()
+                   .max(Comparator.comparing(Map.Entry::getValue));
+           return maxEntry.get().getKey();
+
+       }catch (Throwable e){
+           e.printStackTrace();
+           return "";
+       }
     }
 
     public static void main(String[] args) {

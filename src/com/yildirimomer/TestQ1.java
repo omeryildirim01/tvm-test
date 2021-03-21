@@ -19,39 +19,44 @@ public class TestQ1 {
      * @return
      */
     public static List<String> sorterFunction(List<String> inputArray){
-        List<String> retVal = new ArrayList<>();
-        List<String> strWithLetter = new ArrayList<>();
-        List<String> strWithoutLetter = new ArrayList<>();
-        inputArray.forEach(word ->{
-            if ( letterCounter('a',word)> 0){
-                strWithLetter.add(word);
-            }else{
-                strWithoutLetter.add(word);
-            }
-        });
-        strWithLetter.sort(new java.util.Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                int s1Count = letterCounter('a',s1);
-                int s2Count = letterCounter('a',s2);
-                if ( s1Count==s2Count ){
-                    return s2.length() - s1.length();    // comparision
-                }else {
-                    return s2Count - s1Count;    // comparision
-                }
-            }
-        });
-        strWithoutLetter.sort(new java.util.Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                // TODO: Argument validation (nullity, length)
-                return  s2.length() - s1.length();// comparision
-            }
-        });
-        strWithLetter.forEach(p-> retVal.add(p));
-        strWithoutLetter.forEach(p-> retVal.add(p));
-        return  retVal;
+       try{
+           List<String> retVal = new ArrayList<>();
+           List<String> strWithLetter = new ArrayList<>();
+           List<String> strWithoutLetter = new ArrayList<>();
+           inputArray.forEach(word ->{
+               if ( letterCounter('a',word)> 0){
+                   strWithLetter.add(word);
+               }else{
+                   strWithoutLetter.add(word);
+               }
+           });
+           strWithLetter.sort(new java.util.Comparator<String>() {
+               @Override
+               public int compare(String s1, String s2) {
+                   int s1Count = letterCounter('a',s1);
+                   int s2Count = letterCounter('a',s2);
+                   if ( s1Count==s2Count ){
+                       return s2.length() - s1.length();    // comparision
+                   }else {
+                       return s2Count - s1Count;    // comparision
+                   }
+               }
+           });
+           strWithoutLetter.sort(new java.util.Comparator<String>() {
+               @Override
+               public int compare(String s1, String s2) {
+                   // TODO: Argument validation (nullity, length)
+                   return  s2.length() - s1.length();// comparision
+               }
+           });
+           strWithLetter.forEach(p-> retVal.add(p));
+           strWithoutLetter.forEach(p-> retVal.add(p));
+           return  retVal;
 
+       }catch (Exception e){
+           e.printStackTrace();
+           return new ArrayList<>();
+       }
     }
 
 
